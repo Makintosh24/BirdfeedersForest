@@ -11,8 +11,8 @@
 # variable declaration
 
 birdfeeders: int = 0 # number of birdfeeders in the forest
-survivalrate: float = 0.0 
-birdsurvivalrate: float = 0.0
+survivalrate: float = 0.0 # the input data given to the program
+birdsurvivalrate: float = 0.0 # the calculated survival rate as function of number of feeders
 forestattractiveness: str = " The forest is considered more healthy and attractive for visitors due to the increased number of birds"
 
 # function to determine the forest attractiveness
@@ -36,11 +36,12 @@ def calculate_survival_rate(feeders, survivalrate):
 def print_results(attractiveness, survivalrate):
     print("The forest is considered: ", attractiveness)
     print("Survival rate for birds in areas with feeders: ", survivalrate )
+    print('\n')
     
 
 # main function to control the app
 def main():
-    print("Welcome to the Forest Attractiveness Calculator!")
+    print("\nWelcome to the Forest Attractiveness Calculator!")
     # major loop to read in user input
     while True:
         # try to catch eventually ocurring input mistakes
@@ -56,7 +57,11 @@ def main():
                 continue
             birdsurvivalrate = calculate_survival_rate(birdfeeders, survivalrate)
             print_results(forestattractiveness, birdsurvivalrate)
-            break
+            if input("new calculation (y or n)? ") == "n":
+                break
+            else:
+                print('\n')
+                continue
         except ValueError:
             print("Invalid input. Please enter a valid number.")
 
