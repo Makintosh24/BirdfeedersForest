@@ -3,7 +3,7 @@
 # to start go to folder birdfeeders and type
 #     python.exe .\src\main.py
 #
-# Copyright (c) by  
+# Copyright (c) by  Shilyn Makin
 #
 
 
@@ -50,10 +50,16 @@ def main():
             if birdfeeders < 0:
                 print("Number of feeders cannot be negative. Please try again.")
                 continue
+            if birdfeeders>20:
+                print ("Allowed number of feeders is 1-200")
+                continue
             forestattractiveness = calculate_attractiveness(birdfeeders)
             survivalrate = float(input("Enter the local survival rate of birds: "))
-            if survivalrate < 0:
+            if survivalrate <= 0:
                 print("Survival rate need to be positive. Please try again.")
+                continue
+            if survivalrate > 100:
+                print ("survivalrate cannot exceed 100%" )
                 continue
             birdsurvivalrate = calculate_survival_rate(birdfeeders, survivalrate)
             print_results(forestattractiveness, birdsurvivalrate)
