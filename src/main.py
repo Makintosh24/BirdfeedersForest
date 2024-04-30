@@ -51,7 +51,7 @@ def main():
                 print("Number of feeders cannot be negative. Please try again.")
                 continue
             if birdfeeders>20:
-                print ("Allowed number of feeders is 1-200")
+                print ("Allowed number of feeders is 1-20")
                 continue
             forestattractiveness = calculate_attractiveness(birdfeeders)
             survivalrate = float(input("Enter the local survival rate of birds: "))
