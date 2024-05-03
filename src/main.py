@@ -1,4 +1,4 @@
-# Birdfeeder app
+# BirdfeedersForest app
 #
 # to start go to folder birdfeeders and type
 #     python.exe .\src\main.py
