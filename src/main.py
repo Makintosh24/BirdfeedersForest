@@ -57,7 +57,7 @@ def calculate_attractiveness(feeders_segment, survival_rate_level):
        
     
 # function to deterimne the potential survival rate of birds 
-# as function of number of feeders
+# as function of initial presence  of feeders
 def calculate_survival_rate(feeders, survivalrate):
     if feeders <= 1:
         return survivalrate
